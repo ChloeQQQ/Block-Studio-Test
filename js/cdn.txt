@@ -1,0 +1,11 @@
+Vue2
+https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js
+
+Vue3
+https://unpkg.com/vue@next
+https://unpkg.com/vue@3.2.24/dist/vue.global.js
+
+
+???? https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.24/vue.cjs.js
+
+

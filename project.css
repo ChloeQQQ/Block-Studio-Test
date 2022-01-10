@@ -1,0 +1,286 @@
+.container{
+  max-width: 1200px;
+  position: relative;
+  margin: auto;
+  background-color: white;
+}
+.slider{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.slider img {
+  width: 100%;
+  height: 100%;
+}
+
+nav{
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 500px;
+}
+.nav-list ol{
+  display: flex;
+}
+
+.hamburger{
+  padding: 40px;
+  width: 20px;
+  height: 25px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.hamburger span{
+  width: 20px;
+  height: 0.5px;
+  background-color: rgb(255, 255, 255);
+}
+.logo-img{
+  margin-top: 30px;
+  width: 35px;
+  border-top: 4px black solid;
+  position: absolute;
+  left: 50px;
+  cursor: pointer;
+}
+.logo-img img {
+  padding-top:10px;
+  width: 100%;
+}
+.icons{
+  display: flex;
+  position: absolute;
+  left: 50px;
+  top:820px;
+}
+.icon-1 img,.icon-2 img,.icon-3 img{
+  width: 20px;
+  padding-right: 80px;
+  cursor: pointer;
+}
+.right{
+  position: absolute;
+  left: -90px;
+  top:90%;
+  transform: rotate(90deg);
+}
+.sidebar{
+  display: flex;
+  position:absolute;
+  right: 0px;
+}
+.sidebar li{
+  margin-top: 30px;
+  padding: 5px 30px 5px 30px;
+  font-size: 18px;
+  margin-right: 10px;
+  
+}
+.sidebar li:hover{
+  margin-top: 30px;
+  padding: 5px 30px 5px 30px;
+  margin-right: 10px;
+  font-size: 18px;
+  border:blue 3px solid;
+}
+.sidebar a{
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+.sidebar a:hover{
+  text-align: center;
+  text-decoration: none;
+  color: rgb(6, 10, 238);
+}
+
+
+.homespace{
+  border: 2px rgb(82, 82, 78) solid;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+  width: 800px;
+  background-color: white;
+  
+}
+
+.homespace h1{
+  margin: auto;
+  padding: 30px;
+  font-size: 80px;
+  font-weight:900;
+  text-align: center;
+}
+.textspace{
+  width: 50%;
+  margin: auto;
+}
+.textspace .first-p{
+  margin-top: 150px;
+  line-height: 30px;
+}
+.textspace .second-p{
+  margin-top: 50px;
+  line-height: 30px;
+}
+
+main{
+  position: relative;
+}
+
+.bigball{
+  position: absolute;
+  top: -40px;
+  left: 150px;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  border-radius: 50%;
+  box-shadow: 20px 10px 30px 10px rgba(29, 32, 237, 0.159);
+}
+
+.smallball{
+  position: absolute;
+  top: 400px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  background-color: blue;
+  border-radius: 50%;
+  box-shadow: 20px 10px 30px 10px rgba(29, 32, 237, 0.159);
+}
+
+.alert{
+  position: relative;
+  padding-top: 100px;
+  width: 60%;
+  margin: auto;
+}
+
+.alert img{
+  width: 100%;
+  margin-bottom: 100px;
+
+}
+
+.play{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+/* 定位使用中心為x,y */
+
+.play img{
+  width: 100%;
+  cursor: pointer;
+
+}
+.cardcontainer{
+  width: 60%;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* gird */
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.cards .card-all{
+  width: 33.333333%;
+  box-sizing: border-box;
+  padding: 0px 10px;
+  margin-bottom: 20px;
+}
+/* 選中間的第二個做margin */
+.card-up{
+  border: 1px grey solid;
+  padding: 20px;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+.card-up h1{
+  font-size: 30px;
+  font-weight: 900;
+}
+.card-up .line{
+  margin-top: 100px;
+  margin-bottom: 10px;
+  width: 20px;
+  height: 3px;
+  background-color: rgb(10, 10, 10);
+}
+.card-up p {
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+
+.card-img img{
+  width: 100%;
+}
+
+.blackspace{
+  width: 62px;
+  height: 20px;
+  margin: 20px 0px 20px 15px;
+}
+.blackspace h3{
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 8px 15px 8px 15px;
+  color: white;
+  background-color: black;
+}
+.card-down {
+  border: 1px grey solid;
+}
+
+
+.card-down h2{
+  margin: 20px 0px 30px 15px;
+  line-height: 20px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.card-down p{
+  margin: 20px 0px 20px 15px;
+  font-size: 12px;
+}
+.card-down .CS{
+  margin: 20px 0px 10px 15px;
+  font-size: 12px;
+  color: gray;
+}
+.CS .CSmove{
+  margin: 0px 118px;
+  
+}
+.card-down .type{
+  margin: 0px 0px 30px 15px;
+  font-size: 12px;  
+}
+.type .typemove{
+  margin: 0px 70px;
+}
+
+/* .card-down .CS span{
+  width: 50%;
+} */
+
+
+
