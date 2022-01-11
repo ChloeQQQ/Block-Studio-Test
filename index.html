@@ -7,25 +7,39 @@
     <title>Block Studio</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
     <link rel="stylesheet" href="resetp.css">
-    <link rel="stylesheet" href="./project.js">
+ 
     <link rel="stylesheet" href="./project.css">
     <link rel="stylesheet" href="./js/vue.js">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
 <div id="app">
     <div class="contanier">
         <!-- 大slider -->
-            <div class="bigBanner">           
-                <div class="slider">
-                    <img src="./img/4000.jpeg" alt="" class="" >
-                    <div class="content">
+        <div class="bigBanner">           
+            <div class="slider fade" v-if="sliderindex==1">
+                <img src="./img/4000.jpeg" alt="" class="" >
+            </div>
+            <div class="slider fade" v-if="sliderindex==2">
+                <img src="./img/6000.jpeg" alt="" class="" >
+            </div>
+            <div class="slider fade" v-if="sliderindex==3">
+                <img src="./img/7000.jpeg" alt="" class="" >
+            </div>
+                <div class="dotgroup">
+                    <span class="smalldot"
+                     v-for="(dot,index) in dots"
+                      :key="dot.num" 
+                      v-on:click="DotPic(index+1)"></span>
+                </div>
+
+                    <div class="content" data-aos="flip-left">
                         <div class="homespace">
                             <h1>Home</h1>
                         </div>
                     </div>
-                </div>
-            </div>
+        </div>
 
                 <nav>
                     <!-- logo --> 
@@ -37,15 +51,15 @@
                     <p>BlockStudio&copy;copyright All rights reserved</p>
                     </div>
                     <!-- icons -->
-                    <div class="icons">
+                    <div class="icons" data-aos="zoom-in-right">
                         <div class="icon-1">
-                            <img src="./img/facebook-app-symbol.png" alt="">
+                            <img src="./img/facebook-app-symbol.png" alt="" >
                         </div>
                         <div class="icon-2">
-                            <img src="./img/instagram.png" alt="">
+                            <img src="./img/instagram.png" alt="" >
                         </div>
                         <div class="icon-3">
-                            <img src="./img/youtube.png" alt="">
+                            <img src="./img/youtube.png" alt="" >
                         </div>
                     </div>
                 <!-- nav-list -->
@@ -102,7 +116,8 @@
 
                 <!-- content -->
                     <main>
-                        <div class="textspace">
+                        <div class="textspace" data-aos="fade-up"
+                        data-aos-duration="3000">
                             <p class="first-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque porro nam veritatis exercitationem facilis maiores voluptates enim quasi, autem quae aut doloribus delectus repudiandae iste eaque mollitia atque dolorem? Nemo molestias nesciunt quod ipsa esse consequatur ex dolorum temporibus nam quas iste voluptas, perspiciatis quam mollitia quaerat provident aspernatur ullam?
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque porro nam veritatis exercitationem facilis maiores voluptates enim quasi, autem quae aut doloribus delectus repudiandae iste eaque mollitia atque dolorem? Nemo molestias nesciunt quod ipsa esse consequatur ex dolorum temporibus nam quas iste voluptas, perspiciatis quam mollitia quaerat provident aspernatur ullam?
                             exercitationem facilis maiores voluptates 
@@ -114,30 +129,42 @@
                             </p>
                         </div>
                         <div class="ball">
-                            <div class="bigball">
+                            <div class="bigball"data-aos="fade-down-right">
                             </div>
-                            <div class="smallball">
+                            <div class="smallball" 
+                            data-aos="fade-up-left">
                             </div>
                         </div>
                     </main>
 
-                    <div class="alert">
+                    <div class="alert" data-aos="zoom-in-up">
                         <img src="./img/8000.jepg.jpeg" alt="">
-                        <div class="play">
+                        <div class="play" v-on:click="videoS">
                             <img src="./img/play-button (1).png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="videocover" v-if="isShow">
+                        <div class="deleteV" v-on:click="videoD">X</div>
+                        <div class="videoshow">
+                            <iframe width="1003" height="564" src="https://www.youtube.com/embed/EdUnJ16fjWo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
 
                 <!-- vue cards -->
                 <div class="cardcontainer">
                     <div class="blue-round">
-                        <div class="rect-one"></div>
-                        <div class="rect-two"></div>
-                        <div class="ball-three"></div>
+                        <div class="rect-one" data-aos="fade-down-right"></div>
+                        <div class="rect-two" data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"></div>
+                        <div class="ball-three" data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1000"></div>
                     </div>
                     <div class="cards">
-                        <div class="card-all" v-for="card in cards" :key="card.name">
-                            <div class="card-up">
+                        <div class="card-all" v-for="card in cards" :key="card.name"  >
+                            <div class="card-up" data-aos="fade-up">
                                 <h1>{{card.name}}
                                 {{card.one}}
                                 {{card.two}}
@@ -149,7 +176,7 @@
                                 <div class="arrow-line">⇀</div>
                             </div>
                             
-                            <div class="card-down">
+                            <div class="card-down" data-aos="flip-left" >
                                 <div class="card-img">
                                 <img :src="card.imgURl" alt="">
                                 </div>
@@ -174,42 +201,43 @@
                     </div>
                 </div>
 
-                <!-- phone-cards -->
+            <!-- phone-cards -->
             <div class="RWD-phone">
                 <div class="phone-cards">
                     <div class="phone-f-txt">
                         Award winning civil contractors <br>
                         that goverment.
-                        <div class="liner">
+                    </div>
+                    <div class="liner">
                         <div class="phoneline"></div>
-                        <p>⇀</p>
-                        </div>
+                        <div class="phonearrow">⇀</div>
                     </div>
                 </div>
                 <div class="phone-cards">
                     <div class="phone-f-txt">
                         Award winning civil contractors <br>
                         that goverment.
+                    </div>
                         <div class="liner">
                         <div class="phoneline"></div>
-                        <p>⇀</p>
+                        <div class="phonearrow">⇀</div>
                         </div>
-                    </div>
                 </div>
                 <div class="phone-cards">
                     <div class="phone-f-txt">
                         Award winning civil contractors <br>
                         that goverment.
+                    </div>
                         <div class="liner">
                         <div class="phoneline"></div>
-                        <p>⇀</p>
+                       <div class="phonearrow">⇀</div>
                         </div>
-                    </div>
+                    
                 </div>
 
                 <div class="phone-cards-two">
                     <div class="phonepic">
-                        <img src="./img/3000.jpeg" alt="">
+                        <img src="./img/6000.jpeg" alt="">
                     </div>
                     <div class="phonetxt">
                         Woden Public Realm  <br>
@@ -219,7 +247,7 @@
                 </div>
                 <div class="phone-cards-two">
                     <div class="phonepic">
-                        <img src="./img/3000.jpeg" alt="">
+                        <img src="./img/6000.jpeg" alt="">
                     </div>
                     <div class="phonetxt">
                         Woden Public Realm  <br>
@@ -229,19 +257,59 @@
                 </div>
                 <div class="phone-cards-two">
                     <div class="phonepic">
-                        <img src="./img/3000.jpeg" alt="">
+                        <img src="./img/6000.jpeg" alt="">
                     </div>
                     <div class="phonetxt">
                         Woden Public Realm  <br>
                         Imporvements Works <br>
                         Package Lift & Stairs <br>
                     </div>
+                </div>
+
+                <div class="phoneball">
+
+                </div>
+                <div class="phoneballT">
+
                 </div>
             </div>
 
                 
             <div class="more">
                 <!-- scroll-load -->
+            </div>
+
+            <!-- phonefooter -->
+
+            <div class="phonefooter">
+                <div class="phonewlink">
+                    <ol>
+                        <li> <a href="#">About</a></li>
+                        <li><a href="#">Website</a></li>
+                        <li> <a href="#">Branding</a> </li>
+                    </ol>
+                </div>
+
+                <div class="phoneinfo">
+                    <div class="address">T.02-2885-8586</div>
+                    <div class="email">E.info@blockstudio.tw</div>
+                    <div class="address">3F,No.2,Ln.80.Sec.4,Chengde Rd, Shilin  <br>
+                        Dist, TaipeiCity 111,Taiwan</div>
+                </div>
+
+                <div class="phoneicons">
+                    <div class="footericon-1" >
+                        <img src="./img/w fb.png" alt="" >
+                    </div>
+                    <div class="footericon-2">
+                        <img src="./img/w ig.png" alt="">
+                    </div>
+                    <div class="footericon-3">
+                        <img src="./img/w yu.png" alt="">
+                    </div>
+
+                </div>
+
             </div>
 
         <footer>
@@ -696,6 +764,13 @@
                         },
                     ],
                     isClose:false,
+                    isShow:false,
+                    sliderindex:1,
+                    dots:[
+                        { num:1},
+                        { num:2},
+                        { num:3},
+                    ]
                 },
                 methods: {
                     HbShow(){
@@ -703,7 +778,21 @@
                     },
                     HbClose(){
                         this.isClose = false;
-                    }
+                    },
+                    videoS(){
+                        this.isShow = true;
+                    },
+                    videoD(){
+                        this.isShow = false;
+                    },
+                    DotPic(index){
+                        this.sliderindex = index;
+                        let dotsitem = document.getElementsByClassName("smalldot");
+                        for(let i =0 ; i<this.dots.length; i++){
+                        dotsitem[i].className = dotsitem[i].className.replace("active", "");
+                        }
+                        dotsitem[index-1].className += " active";            
+                    },
                 },
                 computed:{
                     Hbtn(){
@@ -717,6 +806,16 @@
             })
     </script>
 
+   
+
+<script src="./project.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 </body>
 </html>

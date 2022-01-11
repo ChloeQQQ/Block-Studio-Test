@@ -5,16 +5,71 @@
   position: relative;
   margin: auto;
 }
+.bigBanner{
+  position: relative;
+}
 
 .slider{
-  position: relative;
+  box-sizing: border-box;
   width: 100vw;
   height: 100vh;
-}
+} 
 .slider img {
   width: 100%;
   height: 100%;
 }
+.dotgroup{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+
+.smalldot{
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease; 
+  z-index: 10;
+}
+.smalldot:hover{
+  background-color:  #717171;
+}
+.active{
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 10px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease; 
+  z-index: 10;
+  background-color: #717171;
+}
+.fade{
+  animation: fade 1.5s;
+}
+
+/* === animation*/
+@keyframes jello-horizontal{0%{transform:scale3d(1,1,1)}30%{transform:scale3d(1.25,.75,1)}40%{transform:scale3d(.75,1.25,1)}50%{transform:scale3d(1.15,.85,1)}65%{transform:scale3d(.95,1.05,1)}75%{transform:scale3d(1.05,.95,1)}100%{transform:scale3d(1,1,1)}}
+@keyframes roll-in-left{0%{transform:translateX(-800px) rotate(-540deg);opacity:0}100%{transform:translateX(0) rotate(0deg);opacity:1}}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+  }
+
+@keyframes bounce-in-top{0%{transform:translateY(-500px);animation-timing-function:ease-in;opacity:0}38%{transform:translateY(0);animation-timing-function:ease-out;opacity:1}55%{transform:translateY(-55px);animation-timing-function:ease-in}72%{transform:translateY(0);animation-timing-function:ease-out}81%{transform:translateY(-28px);animation-timing-function:ease-in}90%{transform:translateY(0);animation-timing-function:ease-out}95%{transform:translateY(-8px);animation-timing-function:ease-in}100%{transform:translateY(0);animation-timing-function:ease-out}}
+
+@keyframes bounce-in-left{0%{transform:translateX(-600px);animation-timing-function:ease-in;opacity:0}38%{transform:translateX(0);animation-timing-function:ease-out;opacity:1}55%{transform:translateX(-68px);animation-timing-function:ease-in}72%{transform:translateX(0);animation-timing-function:ease-out}81%{transform:translateX(-28px);animation-timing-function:ease-in}90%{transform:translateX(0);animation-timing-function:ease-out}95%{transform:translateX(-8px);animation-timing-function:ease-in}100%{transform:translateX(0);animation-timing-function:ease-out}}
+
+@keyframes swirl-in-top-fwd{0%{transform:rotate(-540deg) scale(0);transform-origin:50% 0;opacity:0}100%{transform:rotate(0) scale(1);transform-origin:50% 0;opacity:1}}
 
 nav{
   display: flex;
@@ -47,8 +102,8 @@ nav{
 
 /* hb使用 */
 .hb-nav{
-  transition: 0.5s ease-in-out ;
-  transform: translateX(2000px);
+  transition: 0.2s ease-in ;
+  transform: translateY(-10000px);
   color: white;
   position: absolute;
   width: 70%;
@@ -59,8 +114,8 @@ nav{
   z-index: 10;
 }
 .hb-show{
-  transition: 0.5s ease-in-out ;
-  transform: translateX(0);
+  transition: 0.2s ease-in ;
+  transform: translateY(0px);
   color: white;
   position: absolute;
   width: 70%;
@@ -133,6 +188,7 @@ nav{
   position: absolute;
   left: 50px;
   top:720px;
+  animation: roll-in-left 2s;
 }
 .icon-1 img,.icon-2 img,.icon-3 img{
   width: 20px;
@@ -176,7 +232,7 @@ nav{
 }
 
 .homespace{
-  border: 2px rgb(82, 82, 78) solid;
+  border: 1px rgba(82, 82, 78, 0.344) solid;
   position: absolute;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -217,6 +273,7 @@ main{
   background-color: blue;
   border-radius: 50%;
   box-shadow: 20px 10px 30px 10px rgba(29, 32, 237, 0.159);
+  animation: bounce-in-top 3s;
 }
 .smallball{
   position: absolute;
@@ -227,6 +284,7 @@ main{
   background-color: blue;
   border-radius: 50%;
   box-shadow: 20px 10px 30px 10px rgba(29, 32, 237, 0.159);
+  animation: bounce-in-top 1.5s;
 }
 .alert{
   position: relative;
@@ -234,6 +292,7 @@ main{
   width: 60%;
   margin: auto;
 }
+
 .alert img{
   width: 100%;
   margin-bottom: 100px;
@@ -251,8 +310,52 @@ main{
 .play img{
   width: 100%;
   cursor: pointer;
-
+  background-color: rgb(148, 150, 152);
+  border-radius: 50%;
 }
+.play img:hover{
+  width: 100%;
+  cursor: pointer;
+  background-color: azure;
+}
+
+/* //  遮罩 */
+.videocover{
+  background-color: rgba(157, 152, 145, 0.769);
+  position: fixed;
+  left: 0;
+  top:0;
+  bottom: 0;
+  right:0;
+  border-radius: 10px;
+  z-index: 21;
+}
+.deleteV{
+  position: absolute;
+  right: 15%;
+  top: 5%;
+  font-size: 30px;
+  color: rgb(21, 20, 20);
+  cursor: pointer;
+}
+/* //跳窗 */
+.videoshow{
+  aspect-ratio: 1003/564;
+  background-color: rgb(11, 10, 10);
+  width: 60%;
+  height: 82%;
+  left: 50%;
+  top:50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 25;
+}
+/*    跟//跳窗一樣大 */
+.videoshow iframe{
+  width: 100%;
+  height: 100%;
+}
+
 .cardcontainer{
   width: 60%;
   margin: auto;
@@ -276,10 +379,12 @@ main{
   background-color: blue;
   border-radius: 20px 20px 20px 20px;
   position: absolute;
-  left: 410px;
+  left: 350px;
   top: 385px;
   box-shadow: 20px 10px 30px 10px rgba(29, 32, 237, 0.159);
   z-index: 2;
+  animation: swirl-in-top-fwd 2s;
+  animation-delay: 4s;
 }
 
 .ball-three{
@@ -288,10 +393,11 @@ main{
   background-color: blue;
   border-radius: 50%;
   position: absolute;
-  right: 400px;
+  right: 340px;
   top: 930px;
   box-shadow: 20px 10px 30px 10px rgba(29, 32, 237, 0.159);
   z-index: 2;
+  animation: jello-horizontal 2s 5s;
 }
 /* gird */
 .cards{
@@ -460,6 +566,10 @@ footer{
   color:white;
 }
 
+.phonefooter{
+  display: none;
+}
+
 
 
 
@@ -516,22 +626,6 @@ footer{
     transform: rotate(90deg);
   }
 
-  .homespace{
-    border: 1px rgb(101, 101, 97) solid;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 2;
-    width: 55%;
-    background-color: white;
-  }
-  .homespace h1{
-    margin: auto;
-    padding: 15px;
-    font-size: 30px;
-    font-weight:900;
-    text-align: center;
-  }
 
   .logo-img{
     margin-top: 30px;
@@ -572,15 +666,17 @@ footer{
   }
 
   .RWD-phone{
+    width: 100%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 30px;
   }
 
   .phone-cards{
     font-weight: 900;
     margin: auto;
-    width: 80%;
+    width: 85%;
     border: 1px gray solid;
     margin-bottom: 20px;
     font-size: 16px;
@@ -592,7 +688,7 @@ footer{
   .phone-cards-two{
     display: flex;
     margin: auto;
-    width: 80%;
+    width: 85%;
     border: 1px gray solid;
     margin-bottom: 20px;
   }
@@ -616,14 +712,69 @@ footer{
     overflow: hidden;
   }
 
+  .play{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+  /* 定位使用中心為x,y */
+  .play img{
+    width: 100%;
+    cursor: pointer;
+  }
 
+  .liner{
+    display:flex ;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 18px;
+  }
 
+  .liner .phoneline{
+    width: 18px;
+    height: 3px;
+    background-color: black;
+  }
 
+  .liner .phonearrow{
+    font-size: 30px;
+    color: gray;
+  }
 
+  .phonefooter{
+    display: block;
+    color: white;
+    background-color: black;
+    
+  }
+  .phonewlink ol{
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .phonewlink li a{
+    text-decoration: none;
+    color: white;
+  }
+.phoneinfo{
+  line-height: 20px;
+  padding-top: 30px;
+  font-size: 10px;
+  text-align: center;
+}
 
-
-
-
+.phoneicons{
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.phoneicons img{
+  width: 100%;
+}
 
 
   .cardcontainer{
