@@ -497,7 +497,7 @@ main{
   border-radius: 20px 20px 20px 20px;
   position: absolute;
   left: 32%;
-  top: 21%;
+  top: 23%;
   box-shadow: 20px 10px 30px 10px rgba(29, 32, 237, 0.159);
   z-index: 2;
   animation: swirl-in-top-fwd 2s;
@@ -510,8 +510,8 @@ main{
   background-color: blue;
   border-radius: 50%;
   position: absolute;
-  left: 66%;
-  top: 48%;
+  left: 64%;
+  top: 47%;
   box-shadow: 20px 10px 30px 10px rgba(29, 32, 237, 0.159);
   z-index: 2;
   animation: jello-horizontal 2s 5s;
