@@ -305,10 +305,11 @@ nav{
   color: rgb(9, 9, 9);
 }
 .icons{
+  z-index: 20;
   display: flex;
   position: absolute;
-  left: 50px;
-  top:720px;
+  left: 4%;
+  bottom:4%;
   animation: roll-in-left 2s;
 }
 .icon-1 img,.icon-2 img,.icon-3 img{
