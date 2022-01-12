@@ -905,6 +905,7 @@ footer{
   }
 
   .RWD-phone{
+    overflow: hidden;
     width: 100%;
     margin: auto;
     display: flex;
