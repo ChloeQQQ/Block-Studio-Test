@@ -26,6 +26,7 @@
   top: 70%;
   left: 50%;
   transform: translate(-50%,-50%);
+  z-index: 10;
 }
 
 .smalldot{
@@ -60,14 +61,17 @@
   animation: fade 1.5s;
 }
 .con-text{
+  width: 100%;
   position: absolute;
   top: 50%;
-  right:50%;
+  left:50%;
   transform: translate(-50%,-50%);
 }
 
 .con-text h1{
-  font-size: 90px;
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
   font-weight: 900;
   line-height: 100px;
 }
