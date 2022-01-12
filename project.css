@@ -490,8 +490,8 @@ main{
   background-color: blue;
   border-radius: 20px 20px 20px 20px;
   position: absolute;
-  left: -20px;
-  top:0px;
+  left: -2%;
+  top:0%;
   box-shadow: 20px 10px 30px 10px rgba(29, 32, 237, 0.159);
 }
 .rect-two{
@@ -500,8 +500,8 @@ main{
   background-color: blue;
   border-radius: 20px 20px 20px 20px;
   position: absolute;
-  left: 350px;
-  top: 385px;
+  left: 31.5%;
+  top: 6%;
   box-shadow: 20px 10px 30px 10px rgba(29, 32, 237, 0.159);
   z-index: 2;
   animation: swirl-in-top-fwd 2s;
@@ -514,8 +514,8 @@ main{
   background-color: blue;
   border-radius: 50%;
   position: absolute;
-  right: 340px;
-  top: 930px;
+  left: 63%;
+  top: 13.2%;
   box-shadow: 20px 10px 30px 10px rgba(29, 32, 237, 0.159);
   z-index: 2;
   animation: jello-horizontal 2s 5s;
