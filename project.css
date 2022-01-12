@@ -61,8 +61,8 @@
 }
 .con-text{
   position: absolute;
-  top: 300px;
-  right:180px;
+  top: 50%;
+  right:50%;
 }
 
 .con-text h1{
