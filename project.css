@@ -23,7 +23,7 @@
 }
 .dotgroup{
   position: absolute;
-  top: 70%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: 10;
@@ -765,8 +765,11 @@ footer{
     }
   }
   
-
-
+  .slider{
+    box-sizing: border-box;
+    max-width: 100vw;
+    height: 80vh;
+  }
   .con-text{
     width: 100%;
     position: absolute;
@@ -782,17 +785,19 @@ footer{
     font-weight: 900;
     line-height: 40px;
     padding: 0px 30px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .con-text p{
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 30px;
     text-align: center;
-    padding: 20px 70px 0px 70px;
+    padding: 20px 0px 0px 0px;
   }
 
   .dotgroup{
     position: absolute;
-    top: 80%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%,-50%);
   }
