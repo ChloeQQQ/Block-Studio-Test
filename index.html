@@ -215,11 +215,11 @@
 
             <!-- phone-cards -->
             
-            <div class="RWD-phone">
+            <div class="RWD-phone" v-for="(phone,index) in phoneShow" :key="phone.nameR">
                 <div class="phone-cards" data-aos="fade-down-right" >
                     <div class="phone-f-txt">
-                        Award winning civil contractors <br>
-                        that goverment.
+                        {{phones[index].nameR}} <br>
+                        {{phones[index].nameT}}
                     </div>
                     <div class="liner">
                         <div class="phoneline"></div>
@@ -228,8 +228,8 @@
                 </div>
                 <div class="phone-cards" data-aos="fade-down-right">
                     <div class="phone-f-txt">
-                        Award winning civil contractors <br>
-                        that goverment.
+                        {{phones[index].nameR}} <br>
+                        {{phones[index].nameT}}
                     </div>
                         <div class="liner">
                         <div class="phoneline"></div>
@@ -238,12 +238,12 @@
                 </div>
                 <div class="phone-cards" data-aos="fade-down-right">
                     <div class="phone-f-txt">
-                        Award winning civil contractors <br>
-                        that goverment.
+                        {{phones[index].nameR}} <br>
+                        {{phones[index].nameT}}
                     </div>
                         <div class="liner">
                         <div class="phoneline"></div>
-                       <div class="phonearrow">⇀</div>
+                        <div class="phonearrow">⇀</div>
                         </div>
                     
                 </div>
@@ -253,9 +253,9 @@
                         <img src="./img/6000.jpeg" alt="">
                     </div>
                     <div class="phonetxt">
-                        Woden Public Realm  <br>
-                        Imporvements Works <br>
-                        Package Lift & Stairs <br>
+                        {{phones[index].nameS}}  <br>
+                        {{phones[index].nameE}}  <br>
+                        {{phones[index].nameA}} <br>
                     </div>
                 </div>
                 <div class="phone-cards-two" data-aos="fade-down-left">
@@ -263,9 +263,9 @@
                         <img src="./img/6000.jpeg" alt="">
                     </div>
                     <div class="phonetxt">
-                        Woden Public Realm  <br>
-                        Imporvements Works <br>
-                        Package Lift & Stairs <br>
+                        {{phones[index].nameS}}  <br>
+                        {{phones[index].nameE}}  <br>
+                        {{phones[index].nameA}} <br>
                     </div>
                 </div>
                 <div class="phone-cards-two" data-aos="fade-down-left">
@@ -273,15 +273,16 @@
                         <img src="./img/6000.jpeg" alt="">
                     </div>
                     <div class="phonetxt">
-                        Woden Public Realm  <br>
-                        Imporvements Works <br>
-                        Package Lift & Stairs <br>
+                        {{phones[index].nameS}}  <br>
+                        {{phones[index].nameE}}  <br>
+                        {{phones[index].nameA}} <br>
                     </div>
                 </div>
             </div>
 
                 
-            <div class="more">
+            <div class="more" v-if="phoneShow < phones.length || phones.length > phoneShow">
+                <button  type="button" @click="phoneShow += 1">More</button>
                 <!-- scroll-load -->
             </div>
 
@@ -777,7 +778,38 @@
                         { num:2},
                         { num:3},
                     ],
+                    phones:[{
+                        nameR:'Award winning civil contractors',
+                        nameT:'that goverment.',
+                        nameS:'Woden Public Realm', 
+                        nameE:'Imporvements Works',  
+                        nameA:'Package Lift & Stairs',
+                    },
+                    {
+                        nameR:'Award winning civil contractors',
+                        nameT:'that goverment.',
+                        nameS:'Woden Public Realm', 
+                        nameE:'Imporvements Works',  
+                        nameA:'Package Lift & Stairs',
+                    },
+                    {
+                        nameR:'Award winning civil contractors',
+                        nameT:'that goverment.',
+                        nameS:'Woden Public Realm', 
+                        nameE:'Imporvements Works',  
+                        nameA:'Package Lift & Stairs',
+                    },
+                    {
+                        nameR:'Award winning civil contractors',
+                        nameT:'that goverment.',
+                        nameS:'Woden Public Realm', 
+                        nameE:'Imporvements Works',  
+                        nameA:'Package Lift & Stairs',
+                    },
+
+                    ],
                     commentsToShow:6,
+                    phoneShow:1,
                 },
                 methods: {
                     HbShow(){
