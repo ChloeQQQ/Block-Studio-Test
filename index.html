@@ -835,7 +835,7 @@ gsap.registerPlugin(ScrollTrigger)
             trigger:".smallball",
             start:"top 50%",
             end: "top 50%",
-            toggleActions:"play none none none",
+            toggleActions:"restart none none none",
             
         }
             })
@@ -848,7 +848,7 @@ gsap.registerPlugin(ScrollTrigger)
             trigger:".play",
             start:"top 50%",
             end: "top 50%",
-            toggleActions:"play none reverse none",
+            toggleActions:"restart none none none",
             
         }
             })
@@ -857,17 +857,46 @@ gsap.registerPlugin(ScrollTrigger)
             y:500,
             duration:3,
             scrollTrigger:{
-            trigger:".play",
+            trigger:".alert",
             start:"top 90%",
             end:"top 10%",
-            toggleActions:"play none reverse none",
+            toggleActions:"play reverse none none",
             scrub:true,
-            // markers:true,
+            markers:true,
             toggleClass:"change",
             }
             
         })
 
+        gsap.to(".smallball", {
+            y:1000,
+            duration:3,
+            scrollTrigger:{
+            trigger:".rect-one",
+            start:"top 90%",
+            end:"top 10%",
+            toggleActions:"play reverse none none",
+            scrub:true,
+            markers:true,
+            
+            }
+            
+        })
+
+        gsap.to(".smallball", {
+            y:1600,
+            duration:3,
+            scrollTrigger:{
+            trigger:".rect-two",
+            start:"top 90%",
+            end:"top 10%",
+            toggleActions:"play reverse none none",
+            scrub:true,
+            markers:true,
+            
+            }
+            
+        })
         gsap.to(".smallball", {
             y:2200,
             duration:3,
@@ -875,13 +904,43 @@ gsap.registerPlugin(ScrollTrigger)
             trigger:".ball-three",
             start:"top 90%",
             end:"top 10%",
-            toggleActions:"restart none none none",
+            toggleActions:"play reverse none none",
             scrub:true,
             markers:true,
             
             }
             
         })
+
+        // gsap.to(".smallball", {
+        //     y:2600,
+        //     duration:3,
+        //     scrollTrigger:{
+        //     start:"top 80%",
+        //     end:"top 20%",
+        //     trigger:".card-all:nth-child(9)",
+        //     toggleActions:"play reverse none none",
+        //     scrub:true,
+        //     markers:true,
+            
+        //     }
+            
+        // })
+
+        // gsap.to(".bigball", {
+        //     y:3300,
+        //     duration:3,
+        //     scrollTrigger:{
+        //     start:"top 80%",
+        //     end:"top 20%",
+        //     trigger:".card-all:nth-child(9)",
+        //     toggleActions:"play reverse none none",
+        //     scrub:true,
+        //     markers:true,
+            
+        //     }
+            
+        // })
 
 
             

@@ -407,6 +407,7 @@ main{
   border-radius: 50%;
   box-shadow: 20px 10px 30px 10px rgba(29, 32, 237, 0.159);
   animation: bounce-in-top 1.5s;
+  z-index: -1;
 }
 .alert{
   position: relative;
@@ -515,8 +516,8 @@ main{
   background-color: blue;
   border-radius: 50%;
   position: absolute;
-  left: 63%;
-  top: 13.2%;
+  left: 65%;
+  top: 13%;
   box-shadow: 20px 10px 30px 10px rgba(29, 32, 237, 0.159);
   z-index: 2;
   animation: jello-horizontal 2s 5s;
