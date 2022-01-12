@@ -830,20 +830,20 @@ gsap.registerPlugin(ScrollTrigger)
         gsap.to(".bigball", {
         x:20,
         y:500,
-        duration:2,
+        duration:3,
         scrollTrigger:{
             trigger:".smallball",
             start:"top 50%",
             end: "top 50%",
-            toggleActions:"play none reverse none",
+            toggleActions:"play none none none",
             
         }
             })
 
         gsap.to(".bigball", {
         x:20,
-        y:1300,
-        duration:3,
+        y:1400,
+        duration:2,
         scrollTrigger:{
             trigger:".play",
             start:"top 50%",
@@ -865,7 +865,24 @@ gsap.registerPlugin(ScrollTrigger)
             // markers:true,
             toggleClass:"change",
             }
+            
         })
+
+        gsap.to(".smallball", {
+            y:2200,
+            duration:3,
+            scrollTrigger:{
+            trigger:".ball-three",
+            start:"top 90%",
+            end:"top 10%",
+            toggleActions:"restart none none none",
+            scrub:true,
+            markers:true,
+            
+            }
+            
+        })
+
 
             
 
