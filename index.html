@@ -171,42 +171,46 @@
                         data-aos-duration="1000"></div>
                     </div>
                     <div class="cards">
-                        <div class="card-all" v-for="card in cards" :key="card.name"  >
+                        <div class="card-all" v-for="(card,i) in commentsToShow" :key="card.name">
                             <div class="card-up" data-aos="fade-up">
-                                <h1 data-aos="zoom-out-down">{{card.name}}
-                                {{card.one}}
-                                {{card.two}}
+                                <h1 data-aos="zoom-out-down">{{cards[i].name}}
+                                {{cards[i].one}}
+                                {{cards[i].two}}
                                 </h1>
                                 <div class="line"></div>
-                                <p>{{card.three}} <br>
-                                    {{card.four}}
+                                <p>{{cards[i].three}} <br>
+                                    {{cards[i].four}}
                                 </p>
                                 <div class="arrow-line">⇀</div>
                             </div>
                             
                             <div class="card-down"  data-aos="flip-up"   >
                                 <div class="card-img">
-                                <img :src="card.imgURl" alt=""data-aos="flip-down">
+                                <img :src="cards[i].imgURl" alt=""data-aos="flip-down">
                                 </div>
                                 <div class="blackspace">
-                                    <h3>{{card.five}}</h3>
+                                    <h3>{{cards[i].five}}</h3>
                                 </div>
-                                <h2>{{card.six}} <br>
-                                {{card.seven}}
+                                <h2>{{cards[i].six}} <br>
+                                {{cards[i].seven}}
                                 </h2>
-                                <p>{{card.eight}}</p>
+                                <p>{{cards[i].eight}}</p>
                             
                                 <div class="CS">
-                                    <span>{{card.clent}}</span>
-                                    <span class="CSmove">{{card.status}}</span>
+                                    <span>{{cards[i].clent}}</span>
+                                    <span class="CSmove">{{cards[i].status}}</span>
                                 </div>
                                 <div class="type">
-                                    <span>{{card.act}}</span>
-                                    <span class="typemove">{{card.complete}}</span>
+                                    <span>{{cards[i].act}}</span>
+                                    <span class="typemove">{{cards[i].complete}}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div v-if="commentsToShow < cards.length || cards.length > commentsToShow" class="btn">
+                        <button type="button" @click="commentsToShow += 3">More</button>
+                      </div>
+                </div>
                 </div>
 
             <!-- phone-cards -->
@@ -772,7 +776,8 @@
                         { num:1},
                         { num:2},
                         { num:3},
-                    ]
+                    ],
+                    commentsToShow:6,
                 },
                 methods: {
                     HbShow(){
