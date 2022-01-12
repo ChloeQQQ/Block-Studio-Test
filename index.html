@@ -28,15 +28,21 @@
                 <img src="./img/7000.jpeg" alt="" class="" >
             </div>
                 <div class="dotgroup">
-                    <span class="smalldot"
-                     v-for="(dot,index) in dots"
-                      :key="dot.num" 
-                      v-on:click="DotPic(index+1)"></span>
+                    <span class="smalldot" v-for="(dot,index) in dots"
+                    :key="dot.num" v-on:click="DotPic(index+1)"></span>
+                </div>
+                    
+                <div class="con-text">
+                    <h1>Commercial builders with pride-<br> 
+                    workmanship that values quality.</h1>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus accusamus ducimus quibusdam ta blanditiis <br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectuslaborum </p> 
                 </div>
 
-                    <div class="content" data-aos="flip-left">
+                    <div class="content" data-aos="zoom-in-up">
                         <div class="homespace">
-                            <h1>Home</h1>
+                            <h1>HOME</h1>
                         </div>
                     </div>
         </div>
@@ -129,15 +135,15 @@
                             </p>
                         </div>
                         <div class="ball">
-                            <div class="bigball"data-aos="fade-down-right">
+                            <div class="bigball">
                             </div>
                             <div class="smallball" 
-                            data-aos="fade-up-left">
+                            data-aos="zoom-in-down">
                             </div>
                         </div>
                     </main>
 
-                    <div class="alert" data-aos="zoom-in-up">
+                    <div class="alert" data-aos="flip-left">
                         <img src="./img/8000.jepg.jpeg" alt="">
                         <div class="play" v-on:click="videoS">
                             <img src="./img/play-button (1).png" alt="">
@@ -165,7 +171,7 @@
                     <div class="cards">
                         <div class="card-all" v-for="card in cards" :key="card.name"  >
                             <div class="card-up" data-aos="fade-up">
-                                <h1>{{card.name}}
+                                <h1 data-aos="zoom-out-down">{{card.name}}
                                 {{card.one}}
                                 {{card.two}}
                                 </h1>
@@ -176,9 +182,9 @@
                                 <div class="arrow-line">⇀</div>
                             </div>
                             
-                            <div class="card-down" data-aos="flip-left" >
+                            <div class="card-down"  data-aos="flip-up"   >
                                 <div class="card-img">
-                                <img :src="card.imgURl" alt="">
+                                <img :src="card.imgURl" alt=""data-aos="flip-down">
                                 </div>
                                 <div class="blackspace">
                                     <h3>{{card.five}}</h3>
@@ -202,8 +208,9 @@
                 </div>
 
             <!-- phone-cards -->
+            
             <div class="RWD-phone">
-                <div class="phone-cards">
+                <div class="phone-cards" data-aos="fade-down-right" >
                     <div class="phone-f-txt">
                         Award winning civil contractors <br>
                         that goverment.
@@ -213,7 +220,7 @@
                         <div class="phonearrow">⇀</div>
                     </div>
                 </div>
-                <div class="phone-cards">
+                <div class="phone-cards" data-aos="fade-down-right">
                     <div class="phone-f-txt">
                         Award winning civil contractors <br>
                         that goverment.
@@ -223,7 +230,7 @@
                         <div class="phonearrow">⇀</div>
                         </div>
                 </div>
-                <div class="phone-cards">
+                <div class="phone-cards" data-aos="fade-down-right">
                     <div class="phone-f-txt">
                         Award winning civil contractors <br>
                         that goverment.
@@ -235,7 +242,7 @@
                     
                 </div>
 
-                <div class="phone-cards-two">
+                <div class="phone-cards-two" data-aos="fade-down-left">
                     <div class="phonepic">
                         <img src="./img/6000.jpeg" alt="">
                     </div>
@@ -245,7 +252,7 @@
                         Package Lift & Stairs <br>
                     </div>
                 </div>
-                <div class="phone-cards-two">
+                <div class="phone-cards-two" data-aos="fade-down-left">
                     <div class="phonepic">
                         <img src="./img/6000.jpeg" alt="">
                     </div>
@@ -255,7 +262,7 @@
                         Package Lift & Stairs <br>
                     </div>
                 </div>
-                <div class="phone-cards-two">
+                <div class="phone-cards-two" data-aos="fade-down-left">
                     <div class="phonepic">
                         <img src="./img/6000.jpeg" alt="">
                     </div>
@@ -802,15 +809,66 @@
                         return 'hb-nav'
                         }
                     }
-                }
+                },
+                mounted() {
+                    let dotsitem = document.getElementsByClassName("smalldot");
+                    dotsitem[0].className += " active";    
+                },
             })
     </script>
 
-   
+  
+
 
 <script src="./project.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="./gsap-public/minified/gsap.min.js"></script>
+<script src="./gsap-public/minified/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger)
+        gsap.to(".bigball", {
+        x:20,
+        y:500,
+        duration:2,
+        scrollTrigger:{
+            trigger:".smallball",
+            start:"top 50%",
+            end: "top 50%",
+            toggleActions:"play none reverse none",
+            markers:true
+        }
+            })
+
+        gsap.to(".bigball", {
+        x:20,
+        y:1300,
+        duration:3,
+        scrollTrigger:{
+            trigger:".play",
+            start:"top 50%",
+            end: "top 50%",
+            toggleActions:"play none reverse none",
+            markers:true
+        }
+            })
+
+            gsap.to(".smallball", {
+            y:500,
+            duration:3,
+            scrollTrigger:{
+            trigger:".play",
+            start:"top 90%",
+            end:"top 10%",
+            toggleActions:"play none reverse none",
+            scrub:true,
+            markers:true,
+            toggleClass:"change",
+            }
+        })
+
+            
+
+</script>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
