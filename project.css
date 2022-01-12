@@ -10,6 +10,8 @@
 }
 
 .slider{
+  object-fit: cover;
+  overflow: hidden;
   box-sizing: border-box;
   max-width: 100vw;
   height: 100vh;
@@ -28,7 +30,6 @@
   transform: translate(-50%,-50%);
   z-index: 10;
 }
-
 .smalldot{
   cursor: pointer;
   height: 10px;
@@ -67,7 +68,6 @@
   left:50%;
   transform: translate(-50%,-50%);
 }
-
 .con-text h1{
   width: 100%;
   text-align: center;
@@ -81,7 +81,6 @@
   line-height: 30px;
   text-align: center;
 }
-
 /* === animation*/
 
 @keyframes kenburns-bottom {
@@ -99,7 +98,6 @@
     transform-origin: 50% 84%;
 }
 }
-
 
 @keyframes kenburns-top {
   0% {
@@ -121,10 +119,6 @@
 
 }
 }
-
-
-
-
 
 @keyframes bounce-top {
   0% {
@@ -709,7 +703,6 @@ footer{
   display: none;
 }
 
-
 /* phone */
 
 @media screen and (max-width: 375px){
@@ -780,7 +773,6 @@ footer{
     right:0px;
     transform: translate(-50%,-50%);
   }
-  
   .con-text h1{
     text-align: center;
     font-size: 28px;
@@ -796,14 +788,12 @@ footer{
     text-align: center;
     padding: 20px 0px 0px 0px;
   }
-
   .dotgroup{
     position: absolute;
     top: 75%;
     left: 50%;
     transform: translate(-50%,-50%);
   }
-
   .homespace{
     border: 1px rgba(82, 82, 78, 0.344) solid;
     position: absolute;
@@ -820,14 +810,12 @@ footer{
     font-weight:900;
     text-align: center;
   }
-  
   .icons{
     display: none;
     position: absolute;
     left: 50px;
     top:720px;
   }
-
   /* hb使用 */
 .hb-nav{
   transition: 0.5s ease-in-out ;
@@ -853,16 +841,13 @@ footer{
   background-color: rgb(14, 13, 13);
   z-index: 10;
 }
-
   main{
     display: none;
     position: relative;
   }
-
   .nav-list ol{
     display: none;
   }
-
   .right{
     display: none;
     position: absolute;
@@ -870,8 +855,6 @@ footer{
     top:90%;
     transform: rotate(90deg);
   }
-
-
   .logo-img{
     animation: bounce-top 1s both;
     margin-top: 30px;
@@ -887,7 +870,6 @@ footer{
     width: 100%;
     color: rgb(9, 9, 9);
   }
-
   .hamburger{
     padding: 30px;
     width: 20px;
@@ -899,7 +881,6 @@ footer{
     justify-content: space-around;
     cursor: pointer;
   }
-
   .alert{
     position: relative;
     padding-top: 70px;
@@ -910,7 +891,6 @@ footer{
     width: 100%;
     margin-bottom: 50px;
   }
-
   .RWD-phone{
     overflow: hidden;
     width: 100%;
@@ -919,7 +899,6 @@ footer{
     flex-wrap: wrap;
     margin-bottom: 30px;
   }
-
   .phone-cards{
     font-weight: 900;
     margin: auto;
@@ -958,7 +937,6 @@ footer{
     vertical-align:bottom;
     overflow: hidden;
   }
-
   .play{
     width: 50px;
     height: 50px;
@@ -972,25 +950,21 @@ footer{
     width: 100%;
     cursor: pointer;
   }
-
   .liner{
     display:flex ;
     justify-content: space-between;
     align-items: center;
     margin: 0px 18px;
   }
-
   .liner .phoneline{
     width: 18px;
     height: 3px;
     background-color: black;
   }
-
   .liner .phonearrow{
     font-size: 30px;
     color: gray;
   }
-
   .phonefooter{
     display: block;
     color: white;
@@ -1022,8 +996,6 @@ footer{
 .phoneicons img{
   width: 100%;
 }
-
-
   .cardcontainer{
     display: none;
     width: 100%;
@@ -1076,8 +1048,6 @@ footer{
     box-shadow: 20px 10px 30px 10px rgba(29, 32, 237, 0.159);
     z-index: 2;
   }
-  
-  
   footer{
     display: none;
     width: 100%;
@@ -1087,7 +1057,6 @@ footer{
     padding-bottom: 100px;
     background-color: rgb(9, 9, 9);
   }
-
   .footercontainer{
     width: 100%;
     margin: auto;
@@ -1141,4 +1110,4 @@ footer{
 }
 
 
-
+/* //end */
