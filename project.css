@@ -706,6 +706,7 @@ footer{
 }
 
 .btn button{
+  border: 1px black solid;
   font-size: 18px;
   font-weight: 100;
   width:220px;
